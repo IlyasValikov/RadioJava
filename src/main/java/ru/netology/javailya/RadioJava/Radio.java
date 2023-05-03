@@ -1,18 +1,29 @@
 package ru.netology.javailya.RadioJava;
+
 public class Radio {
-    public int currentStation;
+    private int currentStation;
+
+    private int currentVolume;
 
     public int getCurrentStation() {
         return currentStation;
     }
 
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation > 9) {
             newCurrentStation = 0;
-        } else newCurrentStation = newCurrentStation;
+        } else {
+            newCurrentStation = newCurrentStation;
+        }
         if (newCurrentStation < 0) {
             newCurrentStation = 9;
-        } else newCurrentStation = newCurrentStation;
+        } else {
+            newCurrentStation = newCurrentStation;
+        }
 
         currentStation = newCurrentStation;
     }
@@ -26,11 +37,6 @@ public class Radio {
         currentStation = 9;
     }
 
-    private int currentVolume;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
 
     public void setCurrentVolume(int newCurrentVolume) {
         if (newCurrentVolume > 100) {
@@ -38,7 +44,8 @@ public class Radio {
         }
         if (newCurrentVolume < 0) {
             newCurrentVolume = 0;
-        } currentVolume = newCurrentVolume;
+        }
+        currentVolume = newCurrentVolume;
     }
 
     public void increaseVolume() {

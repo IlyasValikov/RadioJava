@@ -35,7 +35,7 @@ public class RadioTest {
          cond.setMaxStation();
 
          int expected = 9;
-         int actual = cond.currentStation;
+         int actual = cond.getCurrentStation();
 
          Assertions.assertEquals(expected, actual);
      }
