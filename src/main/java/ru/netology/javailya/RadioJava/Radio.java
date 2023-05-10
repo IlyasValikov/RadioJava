@@ -1,7 +1,8 @@
 package ru.netology.javailya.RadioJava;
 
 public class Radio {
-    private int maxStation = 10;
+   private int sizeStation = 10;
+    private int maxStation = sizeStation - 1;
     private int minStation = 0;
     private int currentStation = minStation;
     private int maxVolume = 100;
@@ -17,9 +18,7 @@ public class Radio {
         this.currentVolume = minVolume;
     }
 
-    public Radio(int size) {
-        maxStation = minStation + size;
-        maxVolume = minVolume + size;
+    public Radio() {
     }
 
     public int getCurrentStation() {

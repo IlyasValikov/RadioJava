@@ -6,20 +6,20 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
      @Test
     public void test() {
-     Radio rad = new Radio(3);
+     Radio rad = new Radio();
 
      Assertions.assertEquals(0, rad.getMinStation());
-     Assertions.assertEquals(3, rad.getMaxStation());
+     Assertions.assertEquals(9, rad.getMaxStation());
      Assertions.assertEquals(0, rad.getCurrentStation());
      Assertions.assertEquals(0, rad.getMinVolume());
-     Assertions.assertEquals(3, rad.getMaxVolume());
+     Assertions.assertEquals(100, rad.getMaxVolume());
      Assertions.assertEquals(0, rad.getCurrentVolume());
 
      }
 
      @Test
      public void shouldSetNextStationAboveMax() {
-         Radio rad = new Radio(8);
+         Radio rad = new Radio();
 
          rad.setCurrentStation(7);
 
@@ -31,7 +31,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetNextStationAboveMax() {
-        Radio rad = new Radio(6);
+        Radio rad = new Radio();
 
         rad.setCurrentStation(10);
 
@@ -43,7 +43,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetStationAboveMin() {
-        Radio rad = new Radio(9);
+        Radio rad = new Radio();
 
         rad.setCurrentStation(-2);
 
@@ -55,7 +55,7 @@ public class RadioTest {
 
     @Test
     public void shouldChooseNextStation() {
-        Radio rad = new Radio(9);
+        Radio rad = new Radio();
         rad.setCurrentStation(9);
 
         rad.setNextStation();
@@ -68,7 +68,7 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseVolume() {
-        Radio rad = new Radio(100);
+        Radio rad = new Radio();
         rad.setCurrentVolume(57);
 
         rad.increaseVolume();
@@ -81,7 +81,7 @@ public class RadioTest {
 
     @Test
     public void shouldDecreaseVolume() {
-        Radio rad = new Radio(100);
+        Radio rad = new Radio();
         rad.setCurrentVolume(45);
 
         rad.decreaseVolume();
@@ -94,7 +94,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotDecreaseAboveMinLimit() {
-        Radio rad = new Radio(100);
+        Radio rad = new Radio();
         rad.setCurrentVolume(0);
 
         rad.decreaseVolume();
@@ -107,7 +107,7 @@ public class RadioTest {
 
     @Test
     public void volumeAboveMax() {
-        Radio rad = new Radio(100);
+        Radio rad = new Radio();
 
         rad.setCurrentVolume(101);
 
