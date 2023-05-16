@@ -12,8 +12,9 @@ public class Radio {
     public Radio() {
     }
 
-    public Radio(int sizeStation) {
-        this.sizeStation = minStation;
+    public Radio(int maxStation) {
+
+        this.maxStation = maxStation;
     }
 
 
@@ -59,6 +60,11 @@ public class Radio {
     public void setNextStation() {
         int target = currentStation + 1;
         setCurrentStation(target);
+    }
+
+    public void setPrevStation() {
+        int step = currentStation - 1;
+        setCurrentStation(step);
     }
 
 
