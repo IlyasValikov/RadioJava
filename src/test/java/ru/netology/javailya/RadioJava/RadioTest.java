@@ -133,11 +133,11 @@ public class RadioTest {
 
     @Test
     public void setStationTest() {
-         Radio rad = new Radio(20);
+         Radio rad = new Radio();
 
-         rad.setCurrentStation(15);
+         rad.setCurrentStation(8);
 
-         int expected = 15;
+         int expected = 8;
          int actual = rad.getCurrentStation();
 
          Assertions.assertEquals(expected, actual);
